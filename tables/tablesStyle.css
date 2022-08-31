@@ -1,5 +1,11 @@
 table{
+    border-color: black;
     border: 2px;
     padding: 2px;
-    
+
+}
+
+tr:hover{
+    background-color: #D6EEEE;
+    padding: 2px;
 }
