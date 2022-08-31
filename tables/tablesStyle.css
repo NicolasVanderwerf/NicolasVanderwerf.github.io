@@ -1,11 +1,18 @@
-table{
-    border-color: black;
-    border: 2px;
-    padding: 2px;
-
+table, th, td{
+    border: 2px solid black;
+    padding: 5px;
+    border-collapse: collapse;
 }
 
 tr:hover{
     background-color: #D6EEEE;
     padding: 2px;
+}
+
+td{
+    font-size: 20px;
+}
+
+th{
+    font-size: 30px;
 }
