@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Nic's Pizzeria</title>
+        <link rel="stylesheet" type="text/css" href="css/contactStyle.css">
     </head>
 
     <body>
@@ -15,12 +16,14 @@
         </ul>
 
         <form method="post" action="https://www.stonecoldprofessor.com/pizza-contact.php">
-            <input name="first-name" placeholder="First Name" type="text">
-            <input name="last-name" placeholder="Last Name" type="text">
-            <input name="email" placeholder="Email Address" type="text">
-            <textarea name="message" placeholder="What's on your mind?"></textarea>
-            <input type="reset">
-            <input type="submit">
+            <input class="formInputs" name="first-name" placeholder="First Name" type="text">
+            <input class="formInputs" name="last-name" placeholder="Last Name" type="text">
+            <input class="formInputs" name="email" placeholder="Email Address" type="text">
+            <br><br>
+            <textarea class="formText"name="message" placeholder="What's on your mind?"></textarea>
+            <br><br>
+            <input class="formButton" type="reset" value="Clear"></input>
+            <input class="formButton" type="submit" value="Send"></input>
         </form>
 
     </body>

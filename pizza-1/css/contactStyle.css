@@ -1,0 +1,23 @@
+.formButton{
+    width: 17%;
+    padding: 5px;
+    
+}
+
+.formText{
+    width: 33%;
+    padding: 5px;
+    
+}
+
+.formInputs{
+    width: 10%;
+    padding: 6px;
+    
+}
+
+
+
+h1{
+    font-size: 30px;
+}
