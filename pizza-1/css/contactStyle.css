@@ -48,7 +48,7 @@
 }
 .formInputsBorderAnimated:focus{
     outline:none;
-    background-color: #707793;
+    background-color: #4b4e6d;
     transform: scale(1.03);
 }
 .formInputsBorderAnimated:not(:placeholder-shown){
