@@ -1,3 +1,25 @@
+
+.formInputs{
+    width: 30%;
+    padding: 5px;
+    font-size: 15px;
+    background-color: transparent;
+    color: #3bba9c;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.formText{
+    width: 90%;
+    height: 100px;
+    padding: 5px;
+    font-size: 20px;
+    background-color: transparent;
+    color: #3bba9c;
+    border: none;    
+}
+
 .formButton{
     width: 38%;
     padding: 10px;
@@ -15,17 +37,6 @@
 }
 .formButton:active{
     transform: scale(0.95);
-}
-
-
-.formText{
-    width: 90%;
-    height: 100px;
-    padding: 5px;
-    font-size: 20px;
-    background-color: transparent;
-    color: #3bba9c;
-    border: none;    
 }
 
 
@@ -65,19 +76,6 @@
 }
 
 
-
-
-.formInputs{
-    width: 30%;
-    padding: 5px;
-    font-size: 15px;
-    background-color: transparent;
-    color: #3bba9c;
-    border: none;
-    margin-left: 5px;
-    margin-right: 5px;
-
-}
 
 .contactForm{
     text-align: center;
