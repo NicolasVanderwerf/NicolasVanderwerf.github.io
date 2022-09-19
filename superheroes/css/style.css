@@ -1,0 +1,41 @@
+.marvel{
+    background: rgb(101, 0, 0);
+}
+.dc{
+    background: rgb(0, 0, 152);
+}
+
+div{
+    padding: 10px;
+    border-radius: 10px;
+    margin:10px;
+}
+.contentdiv{
+    display:flex;
+    flex-direction: row;
+}
+
+h2{
+    font-size: 30px;
+    padding: 15px;
+}
+
+.batman{
+    background: black;
+}
+.wonder-woman{
+    background: linear-gradient(135deg, red, gold 70%);
+}
+.superman{
+    background: linear-gradient(135deg, rgb(33, 146, 239),red 70%);
+}
+
+.spiderman{
+    background: linear-gradient(135deg, red,rgb(33, 146, 239) 70%);
+}
+.iron-man{
+    background: linear-gradient(135deg, red, gold 70%);
+}
+.thor{
+    background: linear-gradient(135deg, silver, red 70%);
+}
