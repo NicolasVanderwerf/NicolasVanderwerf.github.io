@@ -31,11 +31,12 @@ body{
 .headerDiv ul li a{
     text-decoration: none;
     color:black;
-    font-size: 30px;
+    font-size: 25px;
     margin:5px;
     padding:10px 20px;
     border-radius: 8px;
     transition: 0.1s;
+    font-family: arial black,sans-serif;
 }
 
 .headerDiv ul li a:hover{
