@@ -1,0 +1,194 @@
+body{
+    background-color: black;
+}
+
+/*Main div holding ship*/
+div.main{
+    width:30%;
+    height: 100vh;
+    margin: 20px auto;
+    position:relative;
+}
+
+/*Triangle as nose of ship*/
+div.triangleTop{
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+  
+    border-bottom: 100px solid silver;
+    margin: 0px auto;
+}
+/*Rectangle as main body of ship*/
+div.mainhull{
+    background-color: silver;
+    height: 40%;
+    width: 100px;
+    margin: 0px auto;
+}
+/*Triangle as Left Fin*/
+div.leftFin{
+    position:absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 0px solid transparent;
+  
+    border-bottom: 50px solid silver;
+    top:47%;
+    left:22%;
+}
+/*Triangle as Right Fin*/
+div.rightFin{
+    position:absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 0px solid transparent;
+    border-right: 50px solid transparent;
+  
+    border-bottom: 50px solid silver;
+    top:47%;
+    left:64%;
+}
+/*Circle as window*/
+div.portHole{
+    position:absolute;
+    top: 25%;
+    left: 43%;
+    background-color: rgb(0, 213, 255);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+/*Circle as border of window*/
+div.portHoleSeal{
+    position:absolute;
+    top: 24.2%;
+    left: 41.5%;
+    background-color: black;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+/*Unique Shape as rocket of ship*/
+div.thrust1{
+    position: absolute;
+    top: 53.5%;
+    left: 79px;
+    z-index:-1;
+    background-color: red;
+    clip-path: polygon(1% 1%, 12% 100%, 32% 27%, 46% 100%, 68% 36%, 70% 80%, 90% 17%, 96% 79%, 99% 1%);
+    height: 80px;
+    width: 60px;
+    margin: 0px auto;
+}
+/*Unique Shape as rocket of ship*/
+div.thrust2{
+    position: absolute;
+    top: 53.5%;
+    left: 100px;
+    z-index:-1;
+    background-color: yellow;
+    clip-path: polygon(1% 1%, 12% 100%, 32% 27%, 46% 100%, 68% 36%, 70% 80%, 90% 17%, 96% 79%, 99% 1%);
+    height: 50px;
+    width: 90px;
+    margin: 0px auto;
+}
+/*Unique Shape as rocket of ship*/
+div.thrust3{
+    position: absolute;
+    top: 53.5%;
+    left: 120px;
+    z-index:-1;
+    background-color: red;
+    clip-path: polygon(1% 1%, 12% 100%, 32% 27%, 46% 100%, 68% 36%, 70% 80%, 90% 17%, 96% 79%, 99% 1%);
+    height: 120px;
+    width: 50px;
+    margin: 0px auto;
+}
+/*Unique Shape as rocket of ship*/
+div.thrust4{
+    position: absolute;
+    top: 53.5%;
+    left: 140px;
+    z-index:-1;
+    background-color: yellow;
+    clip-path: polygon(1% 1%, 12% 100%, 32% 27%, 46% 100%, 68% 36%, 70% 80%, 90% 17%, 96% 79%, 99% 1%);
+    height: 80px;
+    width: 60px;
+    margin: 0px auto;
+}
+/*Unique Shape as rocket of ship*/
+div.thrust5{
+    position: absolute;
+    top: 53.5%;
+    left: 170px;
+    z-index:-1;
+    background-color: orange;
+    clip-path: polygon(1% 1%, 12% 100%, 32% 27%, 46% 100%, 68% 36%, 70% 80%, 90% 17%, 96% 79%, 99% 1%);
+    height: 80px;
+    width: 60px;
+    margin: 0px auto;
+}
+/*Unique Shape as rocket of ship*/
+div.thrust6{
+    position: absolute;
+    top: 53.5%;
+    left: 210px;
+    z-index:-1;
+    background-color: red;
+    clip-path: polygon(1% 1%, 12% 100%, 32% 27%, 46% 100%, 68% 36%, 70% 80%, 90% 17%, 96% 79%, 99% 1%);
+    height: 80px;
+    width: 60px;
+    margin: 0px auto;
+}
+/*Unique Shape as Stars in the background*/
+div.star{
+    width:20px;
+    height:20px;
+    background-color: gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+/*Unique Shape as Stars in the background*/
+div.star2{
+    position:absolute;
+    top: 20%;
+    left:80%;
+}
+/*Unique Shape as Stars in the background*/
+div.star3{
+    position:absolute;
+    top: 40%;
+    left:40%;
+}
+/*Unique Shape as Stars in the background*/
+div.star4{
+    position:absolute;
+    top: 10%;
+    left:10%;
+}
+/*Unique Shape as Stars in the background*/
+div.star5{
+    position:absolute;
+    top: 90%;
+    left:22%;
+}
+/*Unique Shape as Stars in the background*/
+div.star6{
+    position:absolute;
+    top: 90%;
+    left:92%;
+}
+/*Unique Shape as Stars in the background*/
+div.star7{
+    position:absolute;
+    top: 50%;
+    left:80%;
+}
+/*Unique Shape as Stars in the background*/
+div.star8{
+    position:absolute;
+    top: 80%;
+    left:50%;
+}
