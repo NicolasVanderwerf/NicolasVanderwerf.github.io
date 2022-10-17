@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nic's Pizzeria</title>
+        <link rel="stylesheet" type="text/css" href="css/contactStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+
+    <body>
+        <div class="headerDiv">
+            <h1>Contact Us</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="selectedPage" ><a class="selectedPage" href="contact.html">Contact</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </div>
+
+        <br><br><br><br><br><br><br>
+
+        <div class="contactForm">
+            <form method="post" action="https://www.stonecoldprofessor.com/pizza-contact.php">
+                <input class="formInputs formInputsBorderAnimated" name="first-name" placeholder="First Name" type="text">
+                <input class="formInputs formInputsBorderAnimated" name="last-name" placeholder="Last Name" type="text">
+                <input class="formInputs formInputsBorderAnimated" name="email" placeholder="Email Address" type="text">
+                <br><br>
+                <textarea class="formText formInputsBorderAnimated"name="message" placeholder="What's on your mind?"></textarea>
+                <br><br>
+                <input class="formButton" type="reset" value="Clear"></input>
+                <input class="formButton" type="submit" value="Send"></input>
+            </form>
+        </div>
+
+    </body>
+</html>

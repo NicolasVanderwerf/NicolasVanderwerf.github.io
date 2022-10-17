@@ -1,0 +1,93 @@
+body{
+    background:#3c3f58;
+}
+
+
+.headerDiv{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black ;
+    background-color: #707793;
+    margin:-10px;
+    border-bottom: 3px solid#3bba9c;
+}
+
+.headerDiv ul , .headerDiv ul li{
+    display: inline-block;
+}
+
+.headerDiv ul{
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+    margin-right:2%;
+}
+
+.headerDiv ul li{
+    margin: 5px;
+    transition: 0.1s;
+}
+
+.headerDiv ul li a{
+    text-decoration: none;
+    color:black;
+    font-size: 30px;
+    margin:5px;
+    padding:10px 20px;
+    border-radius: 8px;
+    transition: 0.1s;
+}
+
+.headerDiv ul li a:hover{
+    background-color: #3c3f58;
+    transition: 0.2s;
+    color:#3bba9c;
+}
+.headerDiv ul li:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+a.selectedPage {
+    color:#3bba9c !important;
+    background-color: #3c3f58;
+    border: 3px solid #3bba9c;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0 !important;
+}
+
+li.selectedPage{
+    position: relative;
+    transform: scale(1.05);
+    top: 6px;
+}
+
+.headerDiv h1{
+    font-size:45px;
+    margin:5px;
+    color:black;
+}
+
+div.mainContent{
+    margin-left: auto;
+    margin-right:auto;
+    display: flex;
+    width: 70%;
+    align-content: center;
+    justify-content: center;
+    font-size: 25px;
+    flex-direction: column;
+}
+
+div.main{
+    margin-left: auto;
+    margin-right:auto;
+    justify-content: center;
+    padding: 20px;
+    background-color: #707793;
+    border-radius: 5px;
+}
+
+div.text1{
+    font-size: 30px;
+}

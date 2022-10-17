@@ -1,0 +1,102 @@
+
+.formInputs{
+    width: 30%;
+    padding: 5px;
+    font-size: 15px;
+    background-color: transparent;
+    color: #3bba9c;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.formText{
+    width: 90%;
+    height: 100px;
+    padding: 5px;
+    font-size: 20px;
+    background-color: transparent;
+    color: #3bba9c;
+    border: none;    
+}
+
+.formButton{
+    width: 38%;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 15px;
+    background-color: transparent;
+    color: #3bba9c;
+    border: 2px solid #3bba9c;
+    transition: all 0.3s;
+}
+.formButton:hover{
+    background-color: #4b4e6d;
+    transform: scale(1.03);
+}
+.formButton:active{
+    transform: scale(0.95);
+}
+
+
+.formInputsBorderAnimated{
+    text-align: center;
+    background-repeat: no-repeat;
+    background-image:   linear-gradient(to right, #3bba9c 100%, #3bba9c 100%),
+                        linear-gradient(to bottom, #3bba9c 100%, #3bba9c 100%),
+                        linear-gradient(to right, #3bba9c 100%, #3bba9c 100%),
+                        linear-gradient(to bottom, #3bba9c 100%, #3bba9c 100%);
+    background-size:    100% 2px,
+                        2px 100%,
+                        100% 2px,
+                        2px 100%;
+    background-position:    0 0,
+                            100% 0,
+                            100% 100%,
+                            0 100%;
+    transition: 2s;
+}
+.formInputsBorderAnimated:focus{
+    outline:none;
+    background-color: #4b4e6d;
+    transform: scale(1.03);
+}
+.formInputsBorderAnimated:not(:placeholder-shown){
+    backGround-size: 0% 2px,
+                     2px 100%,
+                     0% 2px,
+                     2px 100%;
+    transition: 2s;
+    background-color: #43455c;
+}
+.formInputsBorderAnimated:hover{
+    background-color: #4b4e6d;
+    transition: 0.5s;
+}
+
+
+
+.contactForm{
+    text-align: center;
+}
+
+
+
+form{
+    display: inline-block;
+    width: 50%;
+    padding: 20px;
+    border-radius: 15px;
+    user-select: none;
+}
+
+body{
+    background:#3c3f58;
+}
+
+
+
+h1{
+    font-size: 30px;
+}
