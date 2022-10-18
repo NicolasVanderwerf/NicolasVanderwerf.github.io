@@ -4,6 +4,9 @@ body{
 
 
 .headerDiv{
+    position: fixed;
+    top:0;
+    width:100%;
     display: flex;
     flex-direction: row;
     border: 2px solid black ;
@@ -66,28 +69,4 @@ li.selectedPage{
     font-size:45px;
     margin:5px;
     color:black;
-}
-
-div.mainContent{
-    margin-left: auto;
-    margin-right:auto;
-    display: flex;
-    width: 70%;
-    align-content: center;
-    justify-content: center;
-    font-size: 25px;
-    flex-direction: column;
-}
-
-div.main{
-    margin-left: auto;
-    margin-right:auto;
-    justify-content: center;
-    padding: 20px;
-    background-color: #707793;
-    border-radius: 5px;
-}
-
-div.text1{
-    font-size: 30px;
 }

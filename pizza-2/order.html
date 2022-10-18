@@ -3,6 +3,8 @@
     <head>
     <title>Nic's Pizzeria</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/orderStyle.css">
+
 
     </head>
     <body>
@@ -11,22 +13,136 @@
 
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li class="selectedPage"><a class="selectedPage" href="order.html">Order</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="selectedPage"><a class="selectedPage" href="order.html">Order</a></li>
             </ul>
         </div>
 
-        <br><br><br><br>
 
-        <form>
-            <input name="toppings[]" value="sausage" type="checkbox">Sausage
-            <input name="toppings[]" value="fishies" type="checkbox">Anchovies
-            <input name="toppings[]" value="lots of dairy" type="checkbox" >Extra Cheese
-            <input name="toppings[]" value="hearts" type="checkbox" >Fish Hearts
-            <input name="size" value="Small" type="radio" >SM
-            <input name="size" value="Medium" type="radio" >MD
-            <input name="size" value= "Large" type="radio" >LG
-        </form>
+        <br><br><br><br>
+        <h2>Create your own Pizza NFT</h2>
+
+        <div class="orderForm">
+            <form method="post" action="https://www.stonecoldprofessor.com/pizza-order.php">
+                <div class="insideOrderForm">
+                    <p class="formTitles">Name</p>
+                    <div class="name">
+                        <input  class="nameInputs" name="first" placeholder="First Name" type="text" required><input class="nameInputs" name="last"  placeholder="First Name" type="text" required>
+                    </div>
+                    <p class="formTitles">Address</p>
+                    <div class="address">
+                        <input class="addressInputs" name="add1"  placeholder="Address" type="text" required>
+                        <br>
+                        <input  class="addressInputs" name="add2"  placeholder="Address Line 2" type="text">
+                        <br>
+                        <input  class="cityInput" name="city"  placeholder="City" type="text" required>
+                        <select class="custom-select" name="state" required>
+                            <option value="?">State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                            <option value="AS">American Samoa</option>
+                            <option value="GU">Guam</option>
+                            <option value="MP">Northern Mariana Islands</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="UM">United States Minor Outlying Islands</option>
+                            <option value="VI">Virgin Islands</option>
+                        </select>
+                        <input class="cityInput" name="zip"  placeholder="ZipCode" type="text" required>
+                    </div>
+                    <p class="formTitles">Concact Info</p>
+                    <div class="contactinfo">
+                        <input class="contactInput" name="phone"  placeholder="Phone Number" type="text" required>
+                        <input class="contactInput" name="email"  placeholder="Email Address" type="text" required>
+                    </div>
+                    <p class="formTitles">What size suits you?</p>
+                    <div class="size">
+                        <label for="sizeS"><input id="sizeS" class="sizes" name="size" value="S" type="radio" required><span class="sizeInput">Average (2 Inches)</span></label>
+                        <label for="sizeM"><input id="sizeM" class="sizes" name="size" value="M" type="radio" required><span class="sizeInput">Large ( 6 Inches)</span></label>
+                        <label for="sizeL"><input id="sizeL" class="sizes" name="size" value="L" type="radio" required><span class="sizeInput">Dr. Sins (10 Inches)</span></label>
+                        <label for="sizeXL"><input id="sizeXL" class="sizes" name="size" value="XL" type="radio" required><span class="sizeInput">;) (12 Inches +)</span></label>
+                    </div>
+                    <p class="formTitles">What about thickness?</p>
+                    <div class="crust">
+                        <label for="crustS"><input id="crustS" class="crust" name="crust" value="S" type="radio" required><span class="crustInput">Skinny</span></label>
+                        <label for="crustM"><input id="crustM" class="crust" name="crust" value="M" type="radio" required><span class="crustInput">Regular</span></label>
+                        <label for="crustL"><input id="crustL" class="crust" name="crust" value="L" type="radio" required><span class="crustInput">Thicc</span></label>
+                        <label for="crustXL"><input id="crustXL" class="crust" name="crust" value="XL" type="radio" required><span class="crustInput">Dumby Thicc</span></label>
+                    </div>
+                    <p class="formTitles">Choose your crypto to go on top</p>
+                    <div class="toppings">
+                        <label for="toppingbtc"><input id="toppingbtc" class="toppings" name="toppings[]" value="BTC" type="checkbox" ><span class="toppingsInput"><img src="img/btc.png"></span></label>
+                        <label for="toppingdoge"><input id="toppingdoge" class="toppings" name="toppings[]" value="DOGE" type="checkbox" ><span class="toppingsInput"><img src="img/doge.png"></span></label>
+                        <label for="toppingeth"><input id="toppingeth" class="toppings" name="toppings[]" value="ETH" type="checkbox" ><span class="toppingsInput"><img src="img/eth.png"></span></label>
+                        <label for="toppingdash"><input id="toppingdash" class="toppings" name="toppings[]" value="DASH" type="checkbox" ><span class="toppingsInput"><img src="img/dash.png"></span></label>
+                        <label for="toppingdat"><input id="toppingdat" class="toppings" name="toppings[]" value="DAT" type="checkbox" ><span class="toppingsInput"><img src="img/dat.png"></span></label>
+                        <label for="toppingdata"><input id="toppingdata" class="toppings" name="toppings[]" value="DATA" type="checkbox" ><span class="toppingsInput"><img src="img/data.png"></span></label>
+                        <label for="toppingdbc"><input id="toppingdbc" class="toppings" name="toppings[]" value="DBC" type="checkbox" ><span class="toppingsInput"><img src="img/dbc.png"></span></label>
+                        <label for="toppingdcn"><input id="toppingdcn" class="toppings" name="toppings[]" value="DCN" type="checkbox" ><span class="toppingsInput"><img src="img/dcn.png"></span></label>
+                        <label for="toppingdcr"><input id="toppingdcr" class="toppings" name="toppings[]" value="DCR" type="checkbox" ><span class="toppingsInput"><img src="img/dcr.png"></span></label>
+                        <label for="toppingdeez"><input id="toppingdeez" class="toppings" name="toppings[]" value="DEEZ" type="checkbox" ><span class="toppingsInput"><img src="img/deez.png"></span></label>
+                        <label for="toppingdent"><input id="toppingdent" class="toppings" name="toppings[]" value="DENT" type="checkbox" ><span class="toppingsInput"><img src="img/dent.png"></span></label>
+                        <label for="toppingdew"><input id="toppingdew" class="toppings" name="toppings[]" value="DEW" type="checkbox" ><span class="toppingsInput"><img src="img/dew.png"></span></label>
+                        <label for="toppingdgb"><input id="toppingdgb" class="toppings" name="toppings[]" value="DGB" type="checkbox" ><span class="toppingsInput"><img src="img/dgb.png"></span></label>
+                        <label for="toppingdlt"><input id="toppingdlt" class="toppings" name="toppings[]" value="DLT" type="checkbox" ><span class="toppingsInput"><img src="img/dlt.png"></span></label>
+                    </div>
+                    <p class="formTitles">Any special requests?</p>
+                    <textarea class="comments" name="comments"  placeholder="Additional Comments" type="text"></textarea><br>
+                    <input class="formButton" type="submit" value="Order Now"></input>
+                    <br>
+                    <input class="formButton" type="reset" value="Clear"></input>
+
+                </div>
+            </form>
+        </div>
     </body>
 </html>
