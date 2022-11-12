@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lottery</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/script1.js"></script>
+    </head>
+    <body onload="welcome()">
+        <h1>Enter a value for each position</h1>
+        <div class="lottoFormDiv">
+            <form class="lottoForm" id="myForm"> 
+            </form>
+            
+            <div class="buttons">
+                <button class="numberInput" onclick="clearForm()">CLEAR</button>
+                <button class="numberInput" onclick="enterUserNums()">ENTER</button>
+            </div>
+        </div>
+        <br>
+        <div class="genOutput" >
+            <div class="genNumbers" id="genOutput"></div>
+            <div class="buttons">
+                <button class="rerollButton" onclick="enterUserNums()">REROLL</button>
+            </div>
+        </div>
+
+        <h2 id="winner"></h2>
+
+
+    </body>
+</html>

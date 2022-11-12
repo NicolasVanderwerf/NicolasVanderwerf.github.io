@@ -1,0 +1,82 @@
+
+div.lottoFormDiv{
+    border: 2px solid black;
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+form.lottoForm{
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+}
+input.formInputs{
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    font-size: 40px;
+}
+div.buttons{
+    padding: 5px;
+    margin: 5px;
+    align-items: center;
+}
+button.numberInput{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+div.genNumbers{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+p.randomNumsP{
+    padding: 5px;
+    border: 2px solid black;
+    margin: 5px;
+    font-size: 40px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+div.genOutput{
+    border: 2px solid black;
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+button.rerollButton{
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+h2{
+    color: white;
+    text-align: center;
+}
+
+body{
+    background-color: black;
+}
