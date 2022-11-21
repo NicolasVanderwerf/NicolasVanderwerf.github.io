@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <title>Mad Lib</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/script1.js"></script>
     </head>
     <body>
         <h1>Mad Lib Game</h1>
         <div class="gameContainer">
             <div class="form">
-                <input class="formInputs" name="'+x+'" type="text">
+                <form class="wordForm" id="wordForm">
+                <input class="formInputs" name="verb1" type="text" placeholder="Verb">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="verb2" type="text" placeholder="Verb">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="adjective1" type="text" placeholder="Adjective">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="adjective2" type="text" placeholder="Adjective">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="noun1" type="text" placeholder="Noun">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="noun2" type="text" placeholder="Noun">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="pronoun1" type="text" placeholder="ProNoun">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="pronoun2" type="text" placeholder="ProNoun">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="adverb1" type="text" placeholder="Adverb">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="adverb2" type="text" placeholder="Adverb">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="prepostion1" type="text" placeholder="Preposition">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="prepostion2" type="text" placeholder="Preposition">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="conjunction1" type="text" placeholder="Conjunction">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="conjunction2" type="text" placeholder="Conjunction">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="interjection1" type="text" placeholder="Interjection">
                 <br>
-                <input class="formInputs" name="'+x+'" type="text">
+                <input class="formInputs" name="interjection2" type="text" placeholder="Interjection">
                 <br>
-                <button onclick="showStory1()">Story 1</button>
-                <br>
-                <button onclick="showStory2()">Story 2</button>
+                </form>
+                <button onclick="showStory1()">Story 1</button><button onclick="showStory2()">Story 2</button>
+                <button class="reset" onclick="resetForm()">Reset</button>
 
             </div>
-            <div class="display">
+            <div class="display" id="display">
 
             </div>
         </div>
