@@ -6,6 +6,25 @@
         <script type = "text/javascript" src="js/script1.js"></script>
     </head>
     <body>
+        <div class="selectOponent">
+            <label for="realPlayerSelect" onclick="showPlayerDiv()"><input id="realPlayerSelect" class="playerOption" name="playerOption" value="Player" type="radio"><span class="playerOption">Two Player</span></label>
+            <label for="aiPlayerSelect" onclick="showPlayerDiv()"><input id="aiPlayerSelect" class="playerOption" name="playerOption" value="AI" type="radio"><span class="playerOption">VS Chuck Norris</span></label>
+        </div>
+        
+        <div class="gameSettings2Player" id="gameSettingsTwoPlayer">
+            <input class="gameNames" type="text" id="player1Name" placeholder="Player 1 Name">
+            <input class="gameNames" type="text" id="player2Name" placeholder="Player 2 Name">
+        </div>
+
+        <div class="gameSettingsVSAI" id="gameSettingsVSAI">
+            <input class="gameNames" type="text" id="player1NameAI" placeholder="Player 1 Name">
+        </div>
+
+        <div class="playButtonContain"><div class="playGame" id="playGame" onclick="resetGame()">Play</div></div>
+
+        <div class="whosTurn" id="whosTurn">
+
+        </div>
         <div class="gameDiv">
             <div id="tile00" class="gridTile" onclick="addMark(this,1)"></div>
             <div id="tile01" class="gridTile" onclick="addMark(this,2)"></div>
@@ -17,6 +36,8 @@
             <div id="tile21" class="gridTile" onclick="addMark(this,128)"></div>
             <div id="tile22" class="gridTile" onclick="addMark(this,256)"></div>
         </div>
+        <div class="playAgain" id="playAgain"></div>
         <div class="winner" id="winner"></div>
+        <br><br><br><br>
     </body>
 </html>

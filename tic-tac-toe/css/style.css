@@ -1,0 +1,119 @@
+div.gameDiv{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    aspect-ratio : 1 / 1;
+    width:40%;
+    position: absolute;
+    left: 50%;
+    margin-left: -20vw;
+}
+
+body{
+    background-color: #121212;
+}
+
+
+div.gridTile{
+    border: 2px solid #154238;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 15vw;
+    color:#3bba9c;
+}
+
+div.winningTiles{
+    color: #5cfcd7;
+    font-size: 16vw;
+}
+
+div.losingTiles{
+    color:#154238;
+    font-size: 14vw;
+}
+
+input.playerOption{
+    display: none;
+}
+
+input.playerOption:checked + span{
+    color:#3bba9c;
+}
+input.playerOption:hover + span{
+    color:#3bba9c;
+}
+span.playerOption{
+    font-size: 4vw;
+    padding: 10px;
+    margin: 10px;
+    background-color: #252525;
+    border-radius: 5px;
+    transition: 0.2s;
+    color:#154238;
+}
+
+#gameSettingsTwoPlayer,#gameSettingsVSAI,#playGame{
+    display:none;
+}
+
+div.selectOponent{
+    text-align: center;
+    padding: 5px;
+}
+
+div.gameSettings2Player,div.gameSettingsVSAI{
+    text-align: center;
+    padding: 5px;
+    margin: 5px;   
+}
+
+input.gameNames{
+    padding: 5px;
+    margin: 5px;
+    font-size: 2vw;
+    text-align: center;
+    background-color: #252525;
+    border-style: none;
+    transition: 0.2s;
+    color:#3bba9c;
+}
+input.gameNames:hover{
+    transform:scale(1.05);
+    border: 2px solid #3bba9c;
+
+}
+input.gameNames:focus{
+    outline:none;
+    transform:scale(1.05);
+    border: 2px solid #3bba9c;
+}
+
+div.playButtonContain{
+    display: flex;
+    justify-content: center;
+}
+
+div.playGame{
+    padding: 5px;
+    margin: 5px;
+    font-size: 3vw;
+    text-align: center;
+    background-color: #252525;
+    color: #3bba9c;
+    transition: 0.2s;
+    width: 8vw;
+}
+div.playGame:hover{
+    transform:scale(1.1);
+}
+
+div.whosTurn{
+    padding: 5px;
+    margin: 5px;
+    font-size: 2vw;
+    text-align: center;
+    color:#3bba9c
+}
