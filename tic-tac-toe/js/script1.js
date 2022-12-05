@@ -77,6 +77,7 @@ async function addMark(thisDiv,spaceValue){
             turnA = !turnA;
             totalTurns++;
             var winningGameValue = checkWinning(currentPlayer);
+            document.getElementById("whosTurn").innerText = "It's " + player1.name +"'s turn!";
             if( winningGameValue > 0){
                 document.getElementById("whosTurn").innerText = currentPlayer.name + ' has WON!!!'
                 gameOver = true;
