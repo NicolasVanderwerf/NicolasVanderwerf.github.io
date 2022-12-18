@@ -1,7 +1,111 @@
+body, html {height:100%;}
 h1{
-    font-size: 40px;
+    font-size: 10vmin;
+    text-align: center;
 }
-.para1{
+
+
+div.name{
+    background-color: blue;
+    height: 90vh;
+    width: 90vw;
+    line-height: 90vh;
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 5vh;
+    border-radius: 5px;
+    
+}
+span.name {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40vmax;
+    color: white;
+    font-family: "Copperplate";
+    white-space: nowrap;
+    overflow: hidden;
+  }
+body{
+    background-color: #2df2f2;
+    overflow: hidden;
+}
+
+
+div.projects{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+
+}
+a{
+    width: 25vmin;
+    height: 20vmin;
+    text-align: center;
+    overflow-x: scroll;
+    flex: 0 0 20vmin;
+    line-height: 20vmin;
+    margin-right: 5vmin;
+    background-color: black;
+    border-radius: 10px;
     color: #2df2f2;
-    font-size: 30px;
+    font-size: 4vmin;
+    text-decoration: none;
+    margin-top: auto;
+    margin-bottom: auto;
 }
+
+div.projectContainer{
+    display:inline-grid;
+    grid-template-columns: 20% 80%;
+    width: 100%;
+    background-color: blue;
+    border-radius: 5px;
+    height: 21vmin;
+}
+div.projectsTitle{
+    text-align: center;
+    line-height: 21vmin;
+    height: 21vmin;
+}
+span.myProjects{
+    vertical-align: middle;
+    text-align: center;
+    font-size: 4vmin;
+    color: white;
+}
+
+div.reflectionContainer{
+    display:inline-grid;
+    grid-template-columns: 20% 80%;
+    width: 100%;
+    background-color: blue;
+    border-radius: 5px;
+}
+div.reflectionTitle{
+    line-height: 21vmin;
+    text-align: center;
+}
+span.reflectionTitle{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 4vmin;
+    color: white;
+}
+div.reflection{
+    text-align: center;
+    display: table;
+}
+p{
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+    font-size: large;
+}
+
+
+/* span.projects{
+    vertical-align: middle;
+} */
+
