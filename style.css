@@ -103,6 +103,21 @@ p{
     padding: 10px;
     font-size: large;
 }
+
+div.littleArrow{
+    text-align:center;
+    font-size:5vmin;
+    top:-2vmin;
+    position:relative;
+    color:gray;
+    animation: bouncyArrow 1s infinite;
+    
+}
+
+@keyframes bouncyArrow {
+    from {top:-2vmin;}
+    to {top:-0.75vmin;}
+  }
 /* Hide scrollbar for Chrome, Safari and Opera */
 .noScroll::-webkit-scrollbar {
     display: none;
@@ -113,6 +128,7 @@ p{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
 
 
 /* span.projects{

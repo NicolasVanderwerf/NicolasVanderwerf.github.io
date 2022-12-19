@@ -11,14 +11,14 @@
 
     <body>
         <div id="mainName" class="name"><span></span><span id="nameSpan" class="name">NKV</span></div>
-        <div style="text-align:center;font-size:5vmin;top:-2vmin;position:relative;color:gray;">⌄</div>        <!-- <div class="logo"><img class="logo" src="images/NKV productions 2nd iteration.png"></div> -->
+        <div class="littleArrow">⌄</div>        <!-- <div class="logo"><img class="logo" src="images/NKV productions 2nd iteration.png"></div> -->
         <br>
         <h1>Welcome To My Portfolio</h1>
         <div class="projectContainer">
         <div class="projectsTitle">
             <span class="myProjects">My Projects:</span>
         </div>
-        <div class="projects noScroll">
+        <div id="scrollX" class="projects noScroll">
             <a href="pizza-1/index.html">Pizza 1</a>
             <a href="tables/index.html">Tables</a>
             <a href="image-map/index.html">Image Map</a>
@@ -35,11 +35,11 @@
        <br>
        <br>
        <br>
-        <div class="reflectionContainer">
+        <div class="reflectionContainer" onclick="getQuote()" id="reflectionContainer">
             <div class="reflectionTitle">
-                <span class="reflectionTitle">Reflection:</span>
+                <span class="reflectionTitle" id="reflectionSpan">Reflection:</span>
             </div>
-            <div class="reflection"><p>This class has added greatly to my skill set and I plan on continuing to develop what I have learned. As a computer science major and while working as a software developer I have found the ability to make a website to be very important both for a user to interact with as well as having a quick GUI for testing programs and outputting results. I think working as a web developer is something I am interested in doing at least part time as I found the subjects covered in this class to be both interesting and entertaining.</p></div>
+            <div class="reflection"><p id="reflectionP">This class has added greatly to my skill set and I plan on continuing to develop what I have learned. As a computer science major and while working as a software developer I have found the ability to make a website to be very important both for a user to interact with as well as having a quick GUI for testing programs and outputting results. I think working as a web developer is something I am interested in doing at least part time as I found the subjects covered in this class to be both interesting and entertaining. <br> Click the page anywhere and scroll quickly through the projects for the sound. Click this box for a random quote.</p></div>
 
         </div>
     </body>
