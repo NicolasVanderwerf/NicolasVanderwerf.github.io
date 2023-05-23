@@ -2,7 +2,7 @@ let pdfScale = 1; // default scale
 let canvas = document.querySelector("#pdf-canvas");
 let context = canvas.getContext('2d');
 
-window['pdfjs-dist/build/pdf'].getDocument('skiHillMaps/ParkCitySkiHillMap.pdf').promise.then((pdfDoc_) => {
+window['pdfjs-dist/build/pdf'].getDocument('skiHillAppWeb/skiHillMaps/ParkCitySkiHillMap.pdf').promise.then((pdfDoc_) => {
     pdfDoc = pdfDoc_;
     renderPage(1); // display first page
 });
