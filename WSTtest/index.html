@@ -3,27 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WST</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>WST Owl Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2a2a2a;
+            background-image: linear-gradient(to bottom, #1e1e1e, #2a2a2a 70%);
+            color: white;
+        }
+        .navbar {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .navbar a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            background-image: url('owlLogo.png'); /* Use the path to your first owl image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        h1 {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #00aaff;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Top Navigation Bar -->
-        <nav>
-            <div class="logo">
-                <!-- Owl face logo here (SVG, PNG, etc.) -->
-                <img src="owlLogo.jpeg" alt="WST Logo">
-            </div>
-            <div class="menu">
-                <!-- Other navigation items can be added here -->
-            </div>
-            <button class="login-button">Login</button>
-        </nav>
-
-        <!-- Main Content Area -->
-        <div class="content">
-            <!-- Your site's information goes here -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="#">Woro</a>
+            <a href="#">W6r6ra6oke</a>
+            <a href="#">Trad Vloco</a>
         </div>
+        <div class="navbar-right">
+            <a href="#">Redm</a>
+            <a href="#">bcp6loco</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1>WST</h1>
+        <button>Login</button>
     </div>
 </body>
 </html>
