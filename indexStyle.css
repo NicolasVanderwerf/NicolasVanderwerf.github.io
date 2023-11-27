@@ -1,0 +1,33 @@
+
+
+.NameP{
+    font-size: xxx-large;
+    padding: 1vh;
+}
+
+.NameD {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Ensure it stays on top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This ensures the body takes the full viewport height */
+    border: 2px solid red;
+    transition: height 0.2s ease-out; /* Smooth transition for shrinking */
+    margin-top: 2vh;
+}
+
+.Resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh; /* This ensures the body takes the full viewport height */
+    margin: 0; /* Removes default margin */
+}
+
+.spacer{
+    height: 30vh;
+}
