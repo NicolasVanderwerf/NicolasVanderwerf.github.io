@@ -74,8 +74,8 @@ function resetInactivityTimer() {
 
 function checkInactivity() {
     inactivityTime++;
-    if (inactivityTime > 10) { // Replace 'someThreshold' with the desired number of seconds
-        alert("Left Page")
+    if (inactivityTime > 5) { // Replace 'someThreshold' with the desired number of seconds
+        alert("Left Page Inactive")
         // Logic for inactivity or tab/window change
     }
 }
@@ -86,7 +86,7 @@ setInterval(checkInactivity, 2000); // Checks every second
 // Detect visibility change
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-        alert("Left Page")
+        alert("Left Page Visibility")
         // Logic for when the tab is inactive
     } else {
         console.log('Tab is active');
@@ -103,7 +103,7 @@ window.addEventListener('focus', function() {
 });
 
 window.addEventListener('blur', function() {
-    alert("Left Page")
+    alert("Left Page Blur")
     // Logic for when the window loses focus
 });
 
