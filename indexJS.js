@@ -64,3 +64,16 @@ function typeWriter() {
         setTimeout(typeWriter, speed);
     }
 }
+
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        console.log('Tab is not active');
+        alert('Left Page');
+        // Your logic for when the tab is inactive
+    } else {
+        console.log('Tab is active');
+        // Your logic for when the tab becomes active again
+    }
+});
+
+
