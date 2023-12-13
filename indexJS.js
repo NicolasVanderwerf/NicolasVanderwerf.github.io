@@ -65,27 +65,53 @@ function typeWriter() {
     }
 }
 
+
+let inactivityTime = 0;
+
+function resetInactivityTimer() {
+    inactivityTime = 0;
+}
+
+function checkInactivity() {
+    inactivityTime++;
+    if (inactivityTime > 10) { // Replace 'someThreshold' with the desired number of seconds
+        alert("Left Page")
+        // Logic for inactivity or tab/window change
+    }
+}
+
+// Set up an interval to track inactivity
+setInterval(checkInactivity, 2000); // Checks every second
+
+// Detect visibility change
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-        console.log('Tab is not active');
-        alert('Left Page');
-        // Your logic for when the tab is inactive
+        alert("Left Page")
+        // Logic for when the tab is inactive
     } else {
         console.log('Tab is active');
-        // Your logic for when the tab becomes active again
+        resetInactivityTimer();
+        // Logic for when the tab becomes active again
     }
 });
 
-document.addEventListener('visibilitychange', (event) => {
-    if (document.visibilityState != 'visible'){
-        alert('Left Page');
-    }
-})
+// Detect focus and blur on the window
+window.addEventListener('focus', function() {
+    console.log('Window is in focus');
+    resetInactivityTimer();
+    // Logic for when the window gains focus
+});
 
 window.addEventListener('blur', function() {
-    console.log('Tab has lost focus');
-    console.log('Tab is not active');
-    // Logic for when the tab loses focus
+    alert("Left Page")
+    // Logic for when the window loses focus
 });
+
+// Reset inactivity timer on user actions
+window.addEventListener('mousemove', resetInactivityTimer);
+window.addEventListener('mousedown', resetInactivityTimer);
+window.addEventListener('keypress', resetInactivityTimer);
+window.addEventListener('scroll', resetInactivityTimer);
+
 
 
