@@ -74,14 +74,14 @@ function resetInactivityTimer() {
 
 function checkInactivity() {
     inactivityTime++;
-    if (inactivityTime > 5) { // Replace 'someThreshold' with the desired number of seconds
+    if (inactivityTime > 20) { // Replace 'someThreshold' with the desired number of seconds
         alert("Left Page Inactive")
         // Logic for inactivity or tab/window change
     }
 }
 
 // Set up an interval to track inactivity
-setInterval(checkInactivity, 2000); // Checks every second
+setInterval(checkInactivity, 5000); // Checks every second
 
 // Detect visibility change
 document.addEventListener('visibilitychange', function() {
