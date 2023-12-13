@@ -76,4 +76,16 @@ document.addEventListener('visibilitychange', function() {
     }
 });
 
+document.addEventListener('visibilitychange', (event) => {
+    if (document.visibilityState != 'visible'){
+        alert('Left Page');
+    }
+})
+
+window.addEventListener('blur', function() {
+    console.log('Tab has lost focus');
+    console.log('Tab is not active');
+    // Logic for when the tab loses focus
+});
+
 
