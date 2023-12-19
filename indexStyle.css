@@ -1,4 +1,5 @@
 
+
 body, html {
     overscroll-behavior: none;
 }
@@ -27,9 +28,9 @@ body{
 
 }
 
-.spacer {
-    height: 80vh;
-}
+/*.spacer {*/
+/*    height: 80vh;*/
+/*}*/
 
 
 .navigation {
@@ -64,7 +65,9 @@ body{
     align-items: center;
     text-align: center;
     position: absolute;
-    top: 300vh;
+    /*top: 300vh;*/
+    will-change: transform;
+    /*transition: linear 0.001s;*/
 }
 .slide:nth-child(1) {
     top: 100vh; /* Position the first slide at the top */

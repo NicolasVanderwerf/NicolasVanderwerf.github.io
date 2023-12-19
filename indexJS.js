@@ -1,80 +1,90 @@
 let reverseTriggered = false;
 let forwardTriggered = false;
 let ticking = false;
+let nameDiv = null;
+
+function throttle (timer) {
+    let queuedCallback
+    return callback => {
+        if (!queuedCallback) {
+            timer(() => {
+                const cb = queuedCallback
+                queuedCallback = null
+                cb()
+            })
+        }
+        queuedCallback = callback
+    }
+}
+const throttleG = throttle(requestAnimationFrame)
+
+window.addEventListener('scroll',function(){
+
+    events = 0;
+    console.log("HandleScroll")
+    // requestAnimationFrame(animateSlides)
+    // requestAnimationFrame(animateSlides)
+    let sY = window.scrollY / window.innerHeight * 100
+    throttleG(() => {
+        animateSlides()
+    })
+    if (sY < 110) {
+        requestAnimationFrame(() => handleScroll(sY)); // Correct usage
+    }
+
+})
 
 
-function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-        var context = this, args = arguments;
-        var later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
+
+function handleScroll(sY){
+    var newHeight = Math.max(100 - sY * 1.2, 10);
+    nameDiv.style.height = newHeight + 'vh';
+
+    if (newHeight <= 10 && !reverseTriggered) {
+        reverseTriggered = true;
+        reverseTypeWriter(() => {
+            forwardTriggered = false;
+        });
+    } else if (newHeight >= 100 && !forwardTriggered) {
+        forwardTriggered = true;
+        typeWriter(() => {
+            reverseTriggered = false;
+        });
+    }
 }
 
-window.addEventListener('scroll', function() {
-
-    if (!ticking) {
-        window.requestAnimationFrame(function() {
-            var scrollPosition = window.scrollY / window.innerHeight * 100;
-            var nameDiv = document.querySelector('.NameD');
-            var newHeight = Math.max(100 - scrollPosition * 1.2, 10);
-            // $('.slide:first-child').style.top = newHeight + 'vh';
-            nameDiv.style.height = newHeight + 'vh';
-
-            if (newHeight <= 10 && !reverseTriggered) {
-                reverseTriggered = true;
-                reverseTypeWriter(() => {
-                    forwardTriggered = false;
-                });
-            } else if (newHeight >= 100 && !forwardTriggered) {
-                forwardTriggered = true;
-                typeWriter(() => {
-                    reverseTriggered = false;
-                });
-            }
-            ticking = false
-        });
-        ticking = true;
-    }
-    debounce(requestAnimationFrame(animateSlides),50);
-});
+let slides = []
 
 // function animateSlides() {
-//     if (!ticking) {
-//         window.requestAnimationFrame(function() {
-//             const slides = document.querySelectorAll('.slide');
-//             slides.forEach((slide, index) => {
-//                 let offset = window.pageYOffset - slide.offsetTop;
-//                 if (offset >= 0) {
-//                     slide.style.transform = `translateY(${offset}px)`;
-//                 }
-//             });
-//             ticking = false;
-//         });
-//         ticking = true;
+//     const viewportTop = window.pageYOffset;
+//     // Read layout properties first
+//     const offsets = Array.from(slides).map(slide => viewportTop - slide.offsetTop);
+//
+//     // Update DOM in a separate loop, iterating backwards
+//     for (let index = offsets.length - 1; index >= 0; index--) {
+//         let offset = offsets[index];
+//         if (offset >= 0) {
+//             slides[index].style.transform = `translate3d(0, ${offset}px, 0)`;
+//             break;
+//         }
 //     }
 // }
 
-slides = [];
-
 function animateSlides() {
-    console.log(slides.length)
-    slides.forEach((slide, index) => {
-        let offset = window.pageYOffset - slide.offsetTop;
-        if (offset >= 0) {
-            slide.style.transform = `translateY(${offset}px)`;
-        }
-    });
+    const viewportTop = window.pageYOffset;
+    // Read layout properties first
+    const offsets = Array.from(slides).map(slide => viewportTop - slide.offsetTop);
 
-    // requestAnimationFrame(animateSlides);
+    // Update DOM in a separate loop, iterating backwards
+    for (let index = offsets.length - 1; index >= 0; index--) {
+        let offset = offsets[index];
+        if (offset >= 0) {
+            slides[index].style.transform = `translate3d(0, ${offset}px, 0)`;
+            break;
+        }
+    }
 }
+
 
 
 
@@ -121,7 +131,8 @@ function typeWriter(callback) {
 
 
 jQuery(document).ready(function ($) {
-    slides = document.querySelectorAll('.slide');
+    nameDiv = document.querySelector('.NameD');
+    slides = Array.from(document.querySelectorAll('.slide'));
     // Cache some variables
     var links = $('.navigation').find('li');
     var slide = $('.slide');
@@ -149,6 +160,8 @@ jQuery(document).ready(function ($) {
         dataslide = $(this).attr('data-slide');
         goToByScroll(dataslide);
     });
+
+    console.log("Loaded")
 });
 
 
