@@ -3,6 +3,20 @@ let forwardTriggered = false;
 let ticking = false;
 
 
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
 
 window.addEventListener('scroll', function() {
 
@@ -32,6 +46,22 @@ window.addEventListener('scroll', function() {
     requestAnimationFrame(animateSlides);
 });
 
+// function animateSlides() {
+//     if (!ticking) {
+//         window.requestAnimationFrame(function() {
+//             const slides = document.querySelectorAll('.slide');
+//             slides.forEach((slide, index) => {
+//                 let offset = window.pageYOffset - slide.offsetTop;
+//                 if (offset >= 0) {
+//                     slide.style.transform = `translateY(${offset}px)`;
+//                 }
+//             });
+//             ticking = false;
+//         });
+//         ticking = true;
+//     }
+// }
+
 
 
 function animateSlides() {
@@ -44,7 +74,7 @@ function animateSlides() {
         }
     });
 
-    requestAnimationFrame(animateSlides);
+    // requestAnimationFrame(animateSlides);
 }
 
 
