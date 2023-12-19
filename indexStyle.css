@@ -1,5 +1,11 @@
 
 
+
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
 .NameP{
     font-size: xxx-large;
     padding: 1vh;
@@ -16,6 +22,7 @@
     align-items: center;
     height: 100vh; /* This ensures the body takes the full viewport height */
     transition: height 0.2s ease-out; /* Smooth transition for shrinking */
+
 }
 
 .spacer {
@@ -43,7 +50,6 @@
 }
 
 .resume{
-    width: 100vw;
     position: relative;
     overflow: hidden;
 }

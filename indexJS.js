@@ -94,19 +94,12 @@ jQuery(document).ready(function ($) {
 
     htmlbody.animate({
         scrollTop: 0
-    }, 0, 'easeInOutQuint', function() {
+    }, 1000, 'easeInOutQuint', function() {
         // Adjust positions of slides here if needed when scroll animation completes
     });
 
     // Setup waypoints plugin
-    slide.waypoint(function (event, direction) {
-        var dataslide = $(this).attr('data-slide');
-        if (direction === 'down') {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').prev().removeClass('active');
-        } else {
-            $('.navigation li[data-slide="' + (dataslide - 1) + '"]').addClass('active').next().removeClass('active');
-        }
-    });
+
 
     // Function for smooth scrolling
     function goToByScroll(dataslide) {
