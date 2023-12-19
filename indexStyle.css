@@ -54,7 +54,8 @@ body{
 
 .resume{
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    height: 600vh;
 }
 
 .slide {
@@ -69,15 +70,17 @@ body{
     will-change: transform;
     /*transition: linear 0.001s;*/
 }
-.slide:nth-child(1) {
-    top: 100vh; /* Position the first slide at the top */
+
+#slide1{
+    top: 100vh;
 }
-.slide:nth-child(2) {
-    top: 300vh; /* Position the first slide at the top */
+#slide2{
+    top: 300vh;
 }
-.slide:nth-child(3) {
-    top: 500vh; /* Position the first slide at the top */
+#slide3{
+    top: 500vh;
 }
+
 
 
 

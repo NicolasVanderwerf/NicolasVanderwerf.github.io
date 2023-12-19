@@ -19,14 +19,9 @@ function throttle (timer) {
 const throttleG = throttle(requestAnimationFrame)
 
 window.addEventListener('scroll',function(){
-
-    events = 0;
-    console.log("HandleScroll")
-    // requestAnimationFrame(animateSlides)
-    // requestAnimationFrame(animateSlides)
     let sY = window.scrollY / window.innerHeight * 100
     throttleG(() => {
-        animateSlides()
+        animateSlides(sY)
     })
     if (sY < 110) {
         requestAnimationFrame(() => handleScroll(sY)); // Correct usage
@@ -55,40 +50,24 @@ function handleScroll(sY){
 
 let slides = []
 
-// function animateSlides() {
-//     const viewportTop = window.pageYOffset;
-//     // Read layout properties first
-//     const offsets = Array.from(slides).map(slide => viewportTop - slide.offsetTop);
-//
-//     // Update DOM in a separate loop, iterating backwards
-//     for (let index = offsets.length - 1; index >= 0; index--) {
-//         let offset = offsets[index];
-//         if (offset >= 0) {
-//             slides[index].style.transform = `translate3d(0, ${offset}px, 0)`;
-//             break;
-//         }
-//     }
-// }
-
-function animateSlides() {
-    const viewportTop = window.pageYOffset;
-    // Read layout properties first
-    const offsets = Array.from(slides).map(slide => viewportTop - slide.offsetTop);
-
-    // Update DOM in a separate loop, iterating backwards
-    for (let index = offsets.length - 1; index >= 0; index--) {
-        let offset = offsets[index];
-        if (offset >= 0) {
-            slides[index].style.transform = `translate3d(0, ${offset}px, 0)`;
-            break;
+slidesTop = [[100,false],[300,false],[500,false]]
+function animateSlides(sY) {
+    console.log("Animate Slides")
+    for (let index = 0; index<3; index++) {
+        if(slidesTop[index][0] < sY && slidesTop[index][1] === false){
+            console.log(`Moving Slide: ${index}`)
+            slidesTop[index][1] = true;
+            slides[index].style.top = '0vh';
+            slides[index].style.position = 'fixed'; // Or 'fixed' if you want it to stay in place on scroll
+            // document.body.appendChild(slides[index]);
+        }else if(slidesTop[index][0] > sY && slidesTop[index][1] === true){
+            slidesTop[index][1] = false;
+            slides[index].style.top = slidesTop[index][0] + 'vh';
+            slides[index].style.position = 'absolute';
         }
     }
 }
 
-
-
-
-// Inside your scroll event
 
 
 var fullText = ['Nicolas','Keaton','Van der Werf'];
@@ -132,11 +111,9 @@ function typeWriter(callback) {
 
 jQuery(document).ready(function ($) {
     nameDiv = document.querySelector('.NameD');
-    slides = Array.from(document.querySelectorAll('.slide'));
+    slides = document.querySelectorAll('.slide');
     // Cache some variables
     var links = $('.navigation').find('li');
-    var slide = $('.slide');
-    var mywindow = $(window);
     var htmlbody = $('html,body');
 
     htmlbody.animate({
