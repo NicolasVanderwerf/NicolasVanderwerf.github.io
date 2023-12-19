@@ -15,7 +15,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* This ensures the body takes the full viewport height */
-    border: 2px solid red;
     transition: height 0.2s ease-out; /* Smooth transition for shrinking */
 }
 
@@ -47,7 +46,6 @@
     width: 100vw;
     position: relative;
     overflow: hidden;
-    border: 2px solid blue;
 }
 
 .slide {
