@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Nicolas Van der Werf</title>
     <link rel="stylesheet" href="/indexStyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="indexJS.js"></script>
 </head>
 <body>
@@ -11,9 +14,27 @@
         <p class="NameP" id="name1">Nicolas</p>
         <p class="NameP" id="name2">Keaton</p>
         <p class="NameP" id="name3">Van der Werf</p>
-
     </div>
     <div class="spacer"></div>
-    <div class="Resume"> Lorem </div>
+    <ul class="navigation">
+        <li data-slide="1">Slide 1</li>
+        <li data-slide="2">Slide 2</li>
+        <li data-slide="3">Slide 3</li>
+        <!-- Add more navigation items as needed -->
+    </ul>
+    <div class="Resume">
+        <section class="slide" data-slide="1" id="slide1">
+            <h2>About Me</h2>
+            <p>Details about Nicolas Van der Werf</p>
+        </section>
+        <section class="slide" data-slide="2" id="slide2">
+            <h2>My Experience</h2>
+            <p>Details about work experience...</p>
+        </section>
+        <section class="slide" data-slide="3" id="slide3">
+            <h2>Projects</h2>
+            <p>Details about projects and achievements...</p>
+        </section>
+    </div>
 </body>
 </html>

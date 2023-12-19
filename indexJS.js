@@ -2,35 +2,43 @@ let reverseTriggered = false;
 let forwardTriggered = false;
 let lastKnownScrollPosition = 0;
 let ticking = false;
+
+
+
 window.addEventListener('scroll', function() {
-    lastKnownScrollPosition = window.scrollY;
 
     if (!ticking) {
         window.requestAnimationFrame(function() {
-            var scrollPosition = window.scrollY;
+            var scrollPosition = window.scrollY / window.innerHeight * 100;
             var nameDiv = document.querySelector('.NameD');
-
-            // Adjust this value to control how quickly the div shrinks
-            var newHeight = Math.max(100 - scrollPosition*1.1,10);
-            console.log("Scrolling: " + newHeight)
+            var newHeight = Math.max(100 - scrollPosition * 1.2, 10);
+            // $('.slide:first-child').style.top = newHeight + 'vh';
             nameDiv.style.height = newHeight + 'vh';
-            if(newHeight == 10 && !reverseTriggered){
-                console.log("Triggered Reverse")
-                reverseTypeWriter();
-                reverseTriggered = true;
-                forwardTriggered = false;
-            } else if (newHeight == 100 && !forwardTriggered) {
-                console.log("Triggered Forward")
-                typeWriter();
-                reverseTriggered = false;
-                forwardTriggered = true;
-            }
-            ticking = false;
-        });
 
+            if (newHeight <= 10 && !reverseTriggered) {
+                reverseTriggered = true;
+                reverseTypeWriter(() => {
+                    forwardTriggered = false;
+                });
+            } else if (newHeight >= 100 && !forwardTriggered) {
+                forwardTriggered = true;
+                typeWriter(() => {
+                    reverseTriggered = false;
+                });
+            }
+            ticking = false
+        });
         ticking = true;
     }
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach((slide, index) => {
+        let offset = window.pageYOffset - slide.offsetTop;
+        if (offset >= 0) { // When the slide comes into view
+            slide.style.transform = `translateY(${offset}px)`;
+        }
+    });
 });
+
 
 
 
@@ -41,7 +49,11 @@ var fullText = ['Nicolas','Keaton','Van der Werf'];
 var currentLength = 13;
 var speed = 50; // Time in milliseconds between each update
 
-function reverseTypeWriter() {
+
+
+
+
+function reverseTypeWriter(callback) {
     if (currentLength > 0) {
         for (let x = 0; x < 3; x++) {
             if (currentLength <= fullText[x].length) {
@@ -49,69 +61,73 @@ function reverseTypeWriter() {
             }
         }
         currentLength--;
-        setTimeout(reverseTypeWriter, speed);
+        console.log("Expand")
+        setTimeout(() => reverseTypeWriter(callback), speed);
+    }else {
+        if (callback) callback();
     }
 }
 
-function typeWriter() {
+function typeWriter(callback) {
     if (currentLength < 13) {
         for (let x = 0; x < 3; x++) {
             if (currentLength <= fullText[x].length) {
                 document.getElementById("name" + (x + 1)).innerHTML = fullText[x].substring(0, currentLength);
             }
         }
+
         currentLength++;
-        setTimeout(typeWriter, speed);
-    }
-}
-
-
-let inactivityTime = 0;
-
-function resetInactivityTimer() {
-    inactivityTime = 0;
-}
-
-function checkInactivity() {
-    inactivityTime++;
-    if (inactivityTime > 20) { // Replace 'someThreshold' with the desired number of seconds
-        alert("Left Page Inactive")
-        // Logic for inactivity or tab/window change
-    }
-}
-
-// Set up an interval to track inactivity
-setInterval(checkInactivity, 5000); // Checks every second
-
-// Detect visibility change
-document.addEventListener('visibilitychange', function() {
-    if (document.hidden) {
-        alert("Left Page Visibility")
-        // Logic for when the tab is inactive
+        setTimeout(() => typeWriter(callback), speed);
     } else {
-        console.log('Tab is active');
-        resetInactivityTimer();
-        // Logic for when the tab becomes active again
+        if (callback) callback();
     }
+}
+
+
+jQuery(document).ready(function ($) {
+
+    // Cache some variables
+    var links = $('.navigation').find('li');
+    var slide = $('.slide');
+    var mywindow = $(window);
+    var htmlbody = $('html,body');
+
+    htmlbody.animate({
+        scrollTop: 0
+    }, 0, 'easeInOutQuint', function() {
+        // Adjust positions of slides here if needed when scroll animation completes
+    });
+
+    // Setup waypoints plugin
+    slide.waypoint(function (event, direction) {
+        var dataslide = $(this).attr('data-slide');
+        if (direction === 'down') {
+            $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').prev().removeClass('active');
+        } else {
+            $('.navigation li[data-slide="' + (dataslide - 1) + '"]').addClass('active').next().removeClass('active');
+        }
+    });
+
+    // Function for smooth scrolling
+    function goToByScroll(dataslide) {
+        console.log("Triggered: " + dataslide)
+        htmlbody.animate({
+            scrollTop: $(window).outerHeight() * (dataslide - 1)
+        }, 1000, 'easeInOutQuint', function() {
+            // Adjust positions of slides here if needed when scroll animation completes
+        });
+    }
+
+    // Click event handlers
+    links.click(function (e) {
+        e.preventDefault();
+        dataslide = $(this).attr('data-slide');
+        goToByScroll(dataslide);
+    });
 });
 
-// Detect focus and blur on the window
-window.addEventListener('focus', function() {
-    console.log('Window is in focus');
-    resetInactivityTimer();
-    // Logic for when the window gains focus
-});
 
-window.addEventListener('blur', function() {
-    alert("Left Page Blur")
-    // Logic for when the window loses focus
-});
 
-// Reset inactivity timer on user actions
-window.addEventListener('mousemove', resetInactivityTimer);
-window.addEventListener('mousedown', resetInactivityTimer);
-window.addEventListener('keypress', resetInactivityTimer);
-window.addEventListener('scroll', resetInactivityTimer);
 
 
 
