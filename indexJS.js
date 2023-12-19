@@ -98,12 +98,8 @@ jQuery(document).ready(function ($) {
         // Adjust positions of slides here if needed when scroll animation completes
     });
 
-    // Setup waypoints plugin
-
-
     // Function for smooth scrolling
     function goToByScroll(dataslide) {
-        console.log("Triggered: " + dataslide)
         htmlbody.animate({
             scrollTop: $(window).outerHeight() * (dataslide - 1)
         }, 1000, 'easeInOutQuint', function() {
