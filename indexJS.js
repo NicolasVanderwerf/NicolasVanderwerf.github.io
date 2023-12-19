@@ -1,6 +1,5 @@
 let reverseTriggered = false;
 let forwardTriggered = false;
-let lastKnownScrollPosition = 0;
 let ticking = false;
 
 
@@ -30,15 +29,23 @@ window.addEventListener('scroll', function() {
         });
         ticking = true;
     }
+    requestAnimationFrame(animateSlides);
+});
+
+
+
+function animateSlides() {
     const slides = document.querySelectorAll('.slide');
+
     slides.forEach((slide, index) => {
         let offset = window.pageYOffset - slide.offsetTop;
-        if (offset >= 0) { // When the slide comes into view
+        if (offset >= 0) {
             slide.style.transform = `translateY(${offset}px)`;
         }
     });
-});
 
+    requestAnimationFrame(animateSlides);
+}
 
 
 
@@ -101,8 +108,8 @@ jQuery(document).ready(function ($) {
     // Function for smooth scrolling
     function goToByScroll(dataslide) {
         htmlbody.animate({
-            scrollTop: $(window).outerHeight() * (dataslide - 1)
-        }, 1000, 'easeInOutQuint', function() {
+            scrollTop: ($(window).outerHeight() * (dataslide - 1) * 2)
+        }, 1000,'linear', function() {
             // Adjust positions of slides here if needed when scroll animation completes
         });
     }

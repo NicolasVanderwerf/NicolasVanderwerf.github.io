@@ -21,7 +21,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh; /* This ensures the body takes the full viewport height */
-    transition: height 0.2s ease-out; /* Smooth transition for shrinking */
+    transition: height 0.1s ease-out; /* Smooth transition for shrinking */
 
 }
 
@@ -68,10 +68,10 @@ body{
     top: 100vh; /* Position the first slide at the top */
 }
 .slide:nth-child(2) {
-    top: 200vh; /* Position the first slide at the top */
+    top: 300vh; /* Position the first slide at the top */
 }
 .slide:nth-child(3) {
-    top: 300vh; /* Position the first slide at the top */
+    top: 500vh; /* Position the first slide at the top */
 }
 
 
