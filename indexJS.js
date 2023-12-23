@@ -34,7 +34,7 @@ window.addEventListener('scroll',function(){
 
 
 function handleScroll(sY){
-    var newHeight = Math.max(100 - sY * 1.2, 10);
+    let newHeight = Math.max(100 - sY * 1.2, 10);
     nameDiv.style.height = newHeight + 'vh';
 
     if (newHeight <= 10 && !reverseTriggered) {
@@ -75,9 +75,9 @@ function animateSlides(sY) {
 
 
 
-var fullText = ['Nicolas','Keaton','Van der Werf'];
-var currentLength = 13;
-var speed = 50; // Time in milliseconds between each update
+let fullText = ['Nicolas','Keaton','Van der Werf'];
+let currentLength = 13;
+let speed = 50; // Time in milliseconds between each update
 
 
 
@@ -117,15 +117,12 @@ function typeWriter(callback) {
 jQuery(document).ready(function ($) {
     nameDiv = document.querySelector('.NameD');
     slides = document.querySelectorAll('.slide');
-    // Cache some variables
-    var links = $('.navigation').find('li');
-    var htmlbody = $('html,body');
+    let links = $('.navigation').find('li');
+    let htmlBody = $('html,body');
 
     $(window).scrollTop(0);
-
-    // Function for smooth scrolling
     function goToByScroll(dataslide) {
-        htmlbody.animate({
+        htmlBody.animate({
             scrollTop: ($(window).outerHeight() * (dataslide - 1) * 2)
         }, 1000,'linear', function() {
             // Adjust positions of slides here if needed when scroll animation completes
@@ -135,8 +132,8 @@ jQuery(document).ready(function ($) {
     // Click event handlers
     links.click(function (e) {
         e.preventDefault();
-        dataslide = $(this).attr('data-slide');
-        goToByScroll(dataslide);
+        let dataSlide = $(this).attr('data-slide');
+        goToByScroll(dataSlide);
     });
 
     console.log("Loaded")
