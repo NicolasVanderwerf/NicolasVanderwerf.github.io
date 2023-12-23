@@ -21,11 +21,13 @@ const throttleG = throttle(requestAnimationFrame)
 window.addEventListener('scroll',function(){
     let sY = window.scrollY / window.innerHeight * 100
     throttleG(() => {
+        // console.log(`Scroll Function: ${sY}`)
+        if (sY < 110) {
+            // requestAnimationFrame(() => handleScroll(sY)); // Correct usage
+            handleScroll(sY)
+        }
         animateSlides(sY)
     })
-    if (sY < 110) {
-        requestAnimationFrame(() => handleScroll(sY)); // Correct usage
-    }
 
 })
 
@@ -52,18 +54,21 @@ let slides = []
 
 slidesTop = [[100,false],[300,false],[500,false]]
 function animateSlides(sY) {
-    console.log("Animate Slides")
-    for (let index = 0; index<3; index++) {
-        if(slidesTop[index][0] < sY && slidesTop[index][1] === false){
-            console.log(`Moving Slide: ${index}`)
-            slidesTop[index][1] = true;
-            slides[index].style.top = '0vh';
-            slides[index].style.position = 'fixed'; // Or 'fixed' if you want it to stay in place on scroll
-            // document.body.appendChild(slides[index]);
-        }else if(slidesTop[index][0] > sY && slidesTop[index][1] === true){
-            slidesTop[index][1] = false;
-            slides[index].style.top = slidesTop[index][0] + 'vh';
-            slides[index].style.position = 'absolute';
+    // Check if sY is within 5 units of any multiple of 100
+    if (Math.abs(sY % 100) <= 20 || Math.abs(sY % 100) >= 80) {
+        // console.log("Animate Slides")
+        for (let index = 0; index < 3; index++) {
+            if(slidesTop[index][0] < sY && slidesTop[index][1] === false){
+                console.log(`Moving Slide: ${index}`)
+                slidesTop[index][1] = true;
+                slides[index].style.top = '0vh';
+                slides[index].style.position = 'fixed';
+            } else if(slidesTop[index][0] > sY && slidesTop[index][1] === true){
+                console.log(`Resetting Slide: ${index}`)
+                slidesTop[index][1] = false;
+                slides[index].style.top = slidesTop[index][0] + 'vh';
+                slides[index].style.position = 'absolute';
+            }
         }
     }
 }
@@ -116,11 +121,7 @@ jQuery(document).ready(function ($) {
     var links = $('.navigation').find('li');
     var htmlbody = $('html,body');
 
-    htmlbody.animate({
-        scrollTop: 0
-    }, 1000, 'easeInOutQuint', function() {
-        // Adjust positions of slides here if needed when scroll animation completes
-    });
+    $(window).scrollTop(0);
 
     // Function for smooth scrolling
     function goToByScroll(dataslide) {
