@@ -27,6 +27,7 @@ window.addEventListener('scroll',function(){
             handleScroll(sY)
         }
         animateSlides(sY)
+
     })
 
 })
@@ -52,6 +53,7 @@ function handleScroll(sY){
 
 let slides = []
 
+
 slidesTop = [[100,false],[300,false],[500,false]]
 function animateSlides(sY) {
     // Check if sY is within 5 units of any multiple of 100
@@ -63,11 +65,22 @@ function animateSlides(sY) {
                 slidesTop[index][1] = true;
                 slides[index].style.top = '0vh';
                 slides[index].style.position = 'fixed';
+                document.querySelector('li[data-slide="'+(index + 1)+'"]').classList.remove('tabSelected')
+                document.querySelector('li[data-slide="'+(index + 2)+'"]').classList.add('tabSelected')
+                if((index + 1) === 1){
+                    document.querySelector('.navigation').classList.add('visible');
+                }
+
             } else if(slidesTop[index][0] > sY && slidesTop[index][1] === true){
                 console.log(`Resetting Slide: ${index}`)
                 slidesTop[index][1] = false;
                 slides[index].style.top = slidesTop[index][0] + 'vh';
                 slides[index].style.position = 'absolute';
+                document.querySelector('li[data-slide="'+(index + 2)+'"]').classList.remove('tabSelected')
+                document.querySelector('li[data-slide="'+(index + 1)+'"]').classList.add('tabSelected')
+                if((index + 1) === 1){
+                    document.querySelector('.navigation').classList.remove('visible');
+                }
             }
         }
     }
