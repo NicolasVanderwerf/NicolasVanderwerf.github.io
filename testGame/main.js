@@ -289,6 +289,7 @@ function assetsReady() {
 //Ressizes game as window size changes.
 //Needs work for elements other then background
 function windowResized() {
+    console.log("Resizing")
     x = xRat * windowWidth
     bgImage = bgImageBuffer.get();
     bgImage.resize(windowWidth, 0);
