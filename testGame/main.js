@@ -22,7 +22,23 @@ let playing = false;
 
 //Runs before Draw. Draw will not run until setup is finished I think.
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+
+    //Fixes max pixel issue on iphone
+    let maxWidth = windowWidth;
+    let maxHeight = windowHeight;
+    const maxPixels = 16777200;
+
+    // const aspectRatio = windowWidth / windowHeight;
+
+
+    if (windowWidth * windowHeight > maxPixels) {
+        const scaleFactor = Math.sqrt(maxPixels / (windowWidth * windowHeight));
+        maxWidth = windowWidth * scaleFactor;
+        maxHeight = windowHeight * scaleFactor;
+    }
+    console.log("Canvas Size:  " + maxWidth * maxHeight)
+    createCanvas(maxWidth, maxHeight);
+
     loadAssets();
 
     // Loads DOM elements for the question/answer box
@@ -164,6 +180,7 @@ function keyPressed() {
         yVelocity = -12;
         onGround = false;
         if(!playing){
+            document.getElementById('touchOverlay').style.opacity = 0;
             playing = true;
             mySound.play();
         }
@@ -190,6 +207,7 @@ function touchStarted() {
         yVelocity = -12;
         onGround = false;
         if(!playing){
+            document.getElementById('touchOverlay').style.opacity = 0;
             playing = true;
             mySound.play();
         }
@@ -255,7 +273,15 @@ function assetsReady() {
         platforms.push(cur);
         i += 120
     }
+    //Show tap instructions
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        document.getElementById('touchOverlay').style.display = "flex";
+    } else {
+        document.getElementById('touchOverlay').style.display = "flex";
+    }
+
     assetsLoaded = true;
+
 
 }
 
