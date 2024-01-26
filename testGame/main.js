@@ -89,7 +89,7 @@ function draw() {
             bgY += yOffset
             let yPos = windowHeight * 1.5 - (bgImage.height) + bgY;
 
-            image(bgImage, 0, 0);
+            image(bgImage, 0, windowHeight - bgImage.height);
 
             y = height * (.6);
 
