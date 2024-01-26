@@ -103,7 +103,7 @@ function draw() {
             }
             bgY += yOffset
             let yPos = windowHeight * 1.5 - (bgImage.height) + bgY;
-            console.log("Before Image")
+
             image(bgImage, 0, yPos);
 
             y = height * (.6);
