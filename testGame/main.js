@@ -233,9 +233,10 @@ function loadAssets() {
 
 //Runs when all assets are loaded
 function assetsReady() {
-    bgImageBuffer = createGraphics(ogImage.width, ogImage.height);
-    bgImageBuffer.image(ogImage, 0, 0);
-    bgImage = bgImageBuffer.get();
+    // bgImageBuffer = createGraphics(ogImage.width, ogImage.height);
+    // bgImageBuffer.image(ogImage, 0, 0);
+    // bgImage = bgImageBuffer.get();
+    bgImage = ogImage;
     bgImage.resize(windowWidth, 0);
     characterImage.resize(150,0);
     x = width / 2;
