@@ -22,7 +22,7 @@ let playing = false;
 
 //Runs before Draw. Draw will not run until setup is finished I think.
 function setup() {
-
+    pixelDensity(1)
     //Fixes max pixel issue on iphone
     let maxWidth = windowWidth;
     let maxHeight = windowHeight;
