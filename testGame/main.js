@@ -23,21 +23,6 @@ let playing = false;
 //Runs before Draw. Draw will not run until setup is finished I think.
 function setup() {
     pixelDensity(1)
-    // //Fixes max pixel issue on iphone
-    // let maxWidth = windowWidth;
-    // let maxHeight = windowHeight;
-    // const maxPixels = 16777200;
-    //
-    // // const aspectRatio = windowWidth / windowHeight;
-    //
-    //
-    // if (windowWidth * windowHeight > maxPixels) {
-    //     const scaleFactor = Math.sqrt(maxPixels / (windowWidth * windowHeight));
-    //     maxWidth = windowWidth * scaleFactor;
-    //     maxHeight = windowHeight * scaleFactor;
-    // }
-    // console.log("Canvas Size:  " + maxWidth * maxHeight)
-    // createCanvas(maxWidth, maxHeight);
     createCanvas(windowWidth,windowHeight);
 
     loadAssets();
@@ -104,7 +89,7 @@ function draw() {
             bgY += yOffset
             let yPos = windowHeight * 1.5 - (bgImage.height) + bgY;
 
-            image(bgImage, 0, yPos);
+            image(bgImage, 0, 0);
 
             y = height * (.6);
 
