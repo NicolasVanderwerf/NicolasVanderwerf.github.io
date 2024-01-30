@@ -68,55 +68,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    /*text-align: center;*/
     position: absolute;
 }
-
-.code-style {
-    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-    background-color: #282c34; /* Dark background */
-    color: #abb2bf; /* Light text */
-    border: 1px solid #3f4451;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    margin: 20px;
-    overflow-x: auto; /* For wider content */
-    line-height: 1.5;
-    font-size: 0.9em;
-    height: auto;
-    width: auto;
-    display: block;
-    justify-content: normal;
-    align-items: normal;
-    text-align: left;
-    position: relative;
-}
-
-/* Line numbers (if you choose to add them) */
-.code-style {
-    counter-reset: line;
-}
-.code-style code {
-    display: block;
-}
-.code-style code:before {
-    counter-increment: line;
-    content: counter(line);
-    display: inline-block;
-    padding-right: 10px;
-    color: #56b6c2; /* Line number color */
-    text-align: right;
-    width: 30px; /* Adjust width as needed */
-}
-
-code{
-    background-color: #282c34;
-    border: 2px solid red;
-    padding: 0;
-    margin: 0;
-}
-
-
 
 #slide1{
     top: 100vh;
@@ -160,5 +114,6 @@ code{
     margin-left: auto;
     margin-right: auto;
 }
+
 
 

@@ -7,8 +7,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="indexJS.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<!--    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="/prismStyle.css">
 </head>
 <body>
     <div class="NameD">
@@ -34,15 +38,15 @@
         </section>
         <section class="slide" data-slide="3" id="slide3">
             <h2>Contact</h2>
-            <pre class="code-style">
-                <code>def contact():</code>
-                <code>    linkedIN = "Nicolas Van der Werf"</code>
+            <pre>
+                <code class="language-python line-numbers prism-twilight">
+def contact():
+    linkedIN = "Nicolas Van der Werf"
+    email    = "nicvanderwerf@gmail.com"
+    phone    = +14356598037
+                </code>
             </pre>
-
-
         </section>
     </div>
 </body>
-<script>hljs.highlightAll();</script>
-
 </html>
