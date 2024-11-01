@@ -7,12 +7,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="indexJS.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-<!--    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet">-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-python.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <link rel="stylesheet" href="/prismStyle.css">
 </head>
 <body>
     <div class="NameD">
@@ -20,8 +14,7 @@
         <p class="NameP" id="name2">Keaton</p>
         <p class="NameP" id="name3">Van der Werf</p>
     </div>
-    <ul class="navigation">
-        <li data-slide="1">NKV</li>
+    <ul class="navigation" id="navigation">
         <li data-slide="2">Slide 1</li>
         <li data-slide="3">Slide 2</li>
         <li data-slide="4">Contact</li>
@@ -29,23 +22,18 @@
     </ul>
     <div class="Resume">
         <section class="slide" data-slide="1" id="slide1">
+        </section>
+        <section class="slide" data-slide="2" id="slide2">
             <h2>About Me</h2>
             <p>Details</p>
         </section>
-        <section class="slide" data-slide="2" id="slide2">
+        <section class="slide" data-slide="3" id="slide3">
             <h2>My Experience</h2>
             <p>Details</p>
         </section>
-        <section class="slide" data-slide="3" id="slide3">
+        <section class="slide" data-slide="4" id="slide4">
             <h2>Contact</h2>
-            <pre>
-                <code class="language-python line-numbers prism-twilight">
-def contact():
-    linkedIN = "Nicolas Van der Werf"
-    email    = "nicvanderwerf@gmail.com"
-    phone    = +14356598037
-                </code>
-            </pre>
+            <p>Details</p>
         </section>
     </div>
 </body>

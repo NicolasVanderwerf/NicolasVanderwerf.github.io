@@ -3,6 +3,10 @@ let forwardTriggered = false;
 let ticking = false;
 let nameDiv = null;
 
+window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+});
+
 function throttle (timer) {
     let queuedCallback
     return callback => {
@@ -18,19 +22,69 @@ function throttle (timer) {
 }
 const throttleG = throttle(requestAnimationFrame)
 
-window.addEventListener('scroll',function(){
-    let sY = window.scrollY / window.innerHeight * 100
-    throttleG(() => {
-        // console.log(`Scroll Function: ${sY}`)
-        if (sY < 110) {
-            // requestAnimationFrame(() => handleScroll(sY)); // Correct usage
-            handleScroll(sY)
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+    const navigation = document.querySelector('.navigation');
+    const navItems = document.querySelectorAll('.navigation li');
+    const slides = document.querySelectorAll('.slide');
+    nameDiv = document.querySelector('.NameD');
+    const calculateSlidePositions = () => {
+
+        const temp = new Array(slides.length).fill(0);
+        temp[0] = 0
+        temp[1] = 150
+        for (let i = 2; i < slides.length; i++) {
+            temp[i] = temp[i-1] + 230
         }
-        animateSlides(sY)
+        slidePositions = Array.from(temp).map(slide => (slide/100) * window.innerHeight);
+    };
 
-    })
+    let slidePositions = [];
 
-})
+    calculateSlidePositions();
+
+    window.addEventListener('resize', calculateSlidePositions);
+
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            window.scrollTo({
+                top: slidePositions[index+1],
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Show navigation on first slide and highlight active slide
+    window.addEventListener('scroll',function(){
+        let sYRaw = window.scrollY;
+        let windowHeight = window.innerHeight
+        let sY = sYRaw / windowHeight * 100
+        throttleG(() => {
+            if (sY < 110) {
+                // requestAnimationFrame(() => handleScroll(sY)); // Correct usage
+                handleScroll(sY)
+            }
+            if (sYRaw > windowHeight) {
+                navigation.classList.add('visible');
+            } else {
+                navigation.classList.remove('visible');
+            }
+            let selected = 1
+            slides.forEach((slide, index) => {
+                const slideTop = slide.getBoundingClientRect().top;
+                if (slideTop < windowHeight * 0.5 && slideTop > -windowHeight * 0.5 && index >= selected) {
+                    selected = index
+                    navItems.forEach(item => item.classList.remove('tabSelected'));
+                    navItems[selected-1].classList.add('tabSelected');
+                }
+            });
+        });
+
+    });
+});
+
 
 
 
@@ -51,50 +105,10 @@ function handleScroll(sY){
     }
 }
 
-let slides = []
-
-
-slidesTop = [[100,false],[300,false],[500,false]]
-function animateSlides(sY) {
-    // Check if sY is within 5 units of any multiple of 100
-    if (Math.abs(sY % 100) <= 20 || Math.abs(sY % 100) >= 80) {
-        // console.log("Animate Slides")
-        for (let index = 0; index < 3; index++) {
-            if(slidesTop[index][0] < sY && slidesTop[index][1] === false){
-                console.log(`Moving Slide: ${index}`)
-                slidesTop[index][1] = true;
-                slides[index].style.top = '0vh';
-                slides[index].style.position = 'fixed';
-                document.querySelector('li[data-slide="'+(index + 1)+'"]').classList.remove('tabSelected')
-                document.querySelector('li[data-slide="'+(index + 2)+'"]').classList.add('tabSelected')
-                if((index + 1) === 1){
-                    document.querySelector('.navigation').classList.add('visible');
-                }
-
-            } else if(slidesTop[index][0] > sY && slidesTop[index][1] === true){
-                console.log(`Resetting Slide: ${index}`)
-                slidesTop[index][1] = false;
-                slides[index].style.top = slidesTop[index][0] + 'vh';
-                slides[index].style.position = 'absolute';
-                document.querySelector('li[data-slide="'+(index + 2)+'"]').classList.remove('tabSelected')
-                document.querySelector('li[data-slide="'+(index + 1)+'"]').classList.add('tabSelected')
-                if((index + 1) === 1){
-                    document.querySelector('.navigation').classList.remove('visible');
-                }
-            }
-        }
-    }
-}
-
-
 
 let fullText = ['Nicolas','Keaton','Van der Werf'];
 let currentLength = 13;
 let speed = 50; // Time in milliseconds between each update
-
-
-
-
 
 function reverseTypeWriter(callback) {
     if (currentLength > 0) {
@@ -125,32 +139,6 @@ function typeWriter(callback) {
         if (callback) callback();
     }
 }
-
-
-jQuery(document).ready(function ($) {
-    nameDiv = document.querySelector('.NameD');
-    slides = document.querySelectorAll('.slide');
-    let links = $('.navigation').find('li');
-    let htmlBody = $('html,body');
-
-    $(window).scrollTop(0);
-    function goToByScroll(dataslide) {
-        htmlBody.animate({
-            scrollTop: ($(window).outerHeight() * (dataslide - 1) * 2)
-        }, 1000,'linear', function() {
-            // Adjust positions of slides here if needed when scroll animation completes
-        });
-    }
-
-    // Click event handlers
-    links.click(function (e) {
-        e.preventDefault();
-        let dataSlide = $(this).attr('data-slide');
-        goToByScroll(dataSlide);
-    });
-
-    console.log("Loaded")
-});
 
 
 
