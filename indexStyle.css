@@ -93,6 +93,12 @@ body{
     top: 0;
 }
 
+#slide5{
+    margin-top: 130vh;
+    background-color: #d0d0d0;
+    top: 0;
+}
+
 
 
 /* Add styles for headings and paragraphs within slides */
