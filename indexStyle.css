@@ -4,6 +4,7 @@ body{
     margin: 0;
     overflow-x: hidden;
     height: 700vh;
+    background: #f2f2f2;
 
 }
 .NameP{
@@ -24,7 +25,7 @@ body{
 }
 
 .tabSelected{
-    font-size: 2rem;
+    font-size: 1.4rem;
     border-bottom: 1px solid #ccc;
 }
 
@@ -79,60 +80,79 @@ body{
     top: 0;
 }
 
-#slide2{
+#slide2 {
     margin-top: 10vh;
     top: 0;
-    background-color: #f0f0f0;
 }
 
-#slide3{
+#slide3 {
     margin-top: 130vh;
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; /* Slightly darker */
     top: 0;
 }
 
-#slide4{
+#slide4 {
     margin-top: 130vh;
-    background-color: #d0d0d0;
+    background-color: #cfcfcf; /* Darker */
     top: 0;
 }
 
-#slide5{
+#slide5 {
     margin-top: 130vh;
-    background-color: #d0d0d0;
+    background-color: #bfbfbf; /* Even darker */
     top: 0;
 }
 
-#slide6{
+#slide6 {
     margin-top: 130vh;
-    background-color: #d0d0d0;
+    background-color: #cfcfcf; /* Darker still */
     top: 0;
 }
 
-#slide7{
+#slide7 {
     margin-top: 130vh;
-    background-color: #d0d0d0;
+    background-color: #e0e0e0; /* Darkest */
     top: 0;
 }
 
 
-
-/* Add styles for headings and paragraphs within slides */
-.slide h2 {
-    font-size: 2em; /* Example font size */
-    position: absolute;
-    top: 10vh;
-    left: 5vw;
-
+.slide-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
 }
 
-.slide p {
-    font-size: 1em;
-    margin-top: 0;
-    width: 60%; /* Control the text width */
-    margin-left: auto;
-    margin-right: auto;
+.slide-content h2 {
+    margin-bottom: 10px;
+    font-size: 3em;
 }
+
+.slide-content h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.slide-content p,
+.slide-content ul {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+.slide-content a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+.slide-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+
+
 
 
 
