@@ -115,6 +115,24 @@ body{
     top: 0;
 }
 
+#slide8 {
+    margin-top: 130vh;
+    background-color: #cfcfcf; /* Darkest */
+    top: 0;
+}
+
+#slide9 {
+    margin-top: 130vh;
+    background-color: #bfbfbf; /* Darkest */
+    top: 0;
+}
+
+#slide10 {
+    margin-top: 130vh;
+    background-color: #cfcfcf; /* Darkest */
+    top: 0;
+}
+
 
 .slide-content {
     max-width: 800px;
